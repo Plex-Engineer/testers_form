@@ -195,6 +195,7 @@
         <p>Please enter a valid verification url.</p>
       {/if}
     </div>
+    ** Please do not change pseudonym and wallet address after generating verification tweet **
     <div class="field">
       <label for="psuedoName">{$name.name}</label>
       <input
