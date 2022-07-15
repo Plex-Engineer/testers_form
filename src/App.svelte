@@ -5,9 +5,9 @@
   import Airtable from "airtable";
   import sha256 from "crypto-js/sha256";
   
-  const name = field("psuedo_name", "", [required()]);
+  const name = field("pseudonym", "", [required()]);
   const address = field("wallet_address", "", [required()]);
-  const validate = field("verifcation_url", "", [required()]);
+  const validate = field("verification_url", "", [required()]);
   const myForm = form(name, address, validate);
   let hashedValue = "";
   var base = new Airtable({ apiKey: import.meta.env.VITE_AIRTABLE_KEY }).base(
@@ -17,10 +17,10 @@
   async function sendTweetAndHash() {
     await myForm.validate();
     //checking if both fields exist
-    if (myForm.summary().psuedo_name && myForm.summary().wallet_address) {
+    if (myForm.summary().pseudonym && myForm.summary().wallet_address) {
       //generating hash
       hashedValue = sha256(
-        myForm.summary().psuedo_name + myForm.summary().wallet_address
+        myForm.summary().pseudonym + myForm.summary().wallet_address
       );
       const placeholder =
         "https://twitter.com/intent/tweet?text=I%20am%20an%20early%20settler%20of%20Canto%20%40CantoPublic.%20Verification%3A%20";
@@ -31,9 +31,9 @@
   async function validateHash(): Promise<boolean> {
     await myForm.validate();
     await validate.validate()
-    if (myForm.summary().psuedo_name && myForm.summary().wallet_address) {
+    if (myForm.summary().pseudonym && myForm.summary().wallet_address) {
       hashedValue = sha256(
-        myForm.summary().psuedo_name + myForm.summary().wallet_address
+        myForm.summary().pseudonym + myForm.summary().wallet_address
       );
       const id = (await validate.validate()).value;
 
@@ -76,17 +76,17 @@
       await myForm.validate();
       const verified = await validateHash();
       isNotMatch = !verified;
-      if (myForm.summary().psuedo_name && myForm.summary().wallet_address && verified) {
+      if (myForm.summary().pseudonym && myForm.summary().wallet_address && verified) {
     loading = true;
 
         base("Testers").create(
           [
             {
               fields: {
-                "Pseudo Name": myForm.summary().psuedo_name,
+                "Pseudo Name": myForm.summary().pseudonym,
                 "Wallet Address": myForm.summary().wallet_address,
                 "Verified": verified,
-                "Tweet" : myForm.summary().verifcation_url
+                "Tweet" : myForm.summary().verification_url
               },
             },
           ],
@@ -120,21 +120,45 @@
       style="margin-right : 1rem"
     />the settlers of canto
   </h1>
-  <p>
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum aliquid modi
-    impedit, accusamus adipisci aperiam culpa vitae quaerat explicabo
-    exercitationem esse repellat neque vel fugiat quae iste ipsum. Iste, velit?
+  <p style="text-align: left;">
+    Welcome to Canto. The Canto Movement is an experiment to return to the principles of an open, free, and community-driven ecosystem.
+     To participate in the testnet, please provide the info below.<br><br>
+<span style="font-weight: 600;">
+If verified, please check your wallet for tokens at 9AM EST, and go crazy.
+
+</span>
+  </p>
+  <p style="text-align: left;">
+    <br>
+Testnet RPC url:
+<br>
+
+Chain ID:
+<br>
+
+Canto Lending Market url:
+<br>
+
+DEX url:
+<br>
+<br>
+
+  </p>
+
+  <p style="text-align: center;">
+We appreciate your early support.
+
   </p>
   <section class="form">
     <div class="errors">
-      {#if $myForm.hasError("psuedo_name.required")}
+      {#if $myForm.hasError("pseudonym.required")}
         <p>Please enter a psuedo name.</p>
       {/if}
       {#if $myForm.hasError("wallet_address.required")}
         <p>Please enter a wallet address.</p>
       {/if}
-      {#if $myForm.hasError("verifcation_url.required")}
-        <p>Please enter the tweet url for verification</p>
+      {#if $myForm.hasError("verification_url.required")}
+        <p>Please enter the tweet url for verification.</p>
       {/if}
       {#if isNotMatch}
       <p>Please enter a valid verification url.</p>
