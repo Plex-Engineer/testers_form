@@ -230,7 +230,7 @@ export const decimals = {
               decimals: 18,
             },
             rpcUrls: ['https://node.plexnode.wtf'],
-            // blockExplorerUrls: ["https://bscscan.com"],
+            blockExplorerUrls: ["https://bscscan.com"],
           },
         ],
       })
