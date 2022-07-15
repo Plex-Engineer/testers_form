@@ -112,13 +112,14 @@
 </script>
 
 <main>
-  <h1 style="margin-bottom : 2rem">
-    <img
+  <img
       src={cantoLogo}
       height={40}
       alt="canto logo"
       style="margin-right : 1rem"
-    />the settlers of canto
+    />
+  <h1 style="margin-bottom : 2rem">
+    the settlers of canto
   </h1>
   <p style="text-align: left;">
     Welcome to Canto. The Canto Movement is an experiment to return to the principles of an open, free, and community-driven ecosystem.
