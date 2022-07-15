@@ -192,7 +192,7 @@ export const decimals = {
               address: token.underlying_address, // The address that the token is at.
               symbol: token.underlying_symbol, // A ticker symbol or shorthand, up to 5 chars.
               decimals: token.underlying_decimals, // The number of decimals in the token
-            //   image: token.icon, // A string url of the token logo
+              image: "https://raw.githubusercontent.com/Canto-Network/list/main/logos/token-logos/token/aqua.png?token=GHSAT0AAAAAABVRJKF3XSMZ3UXTTO3BBWKQYV2L7AQ", // A string url of the token logo
             },
           },
         });
