@@ -132,8 +132,8 @@ input[type=submit]:focus {
 }
 
 .errors {
-  color : rgb(252, 92, 92)
-  
+  color : rgb(252, 92, 92);
+  font-weight : 600;
 }
 
 @media screen and (max-width : 600px) {

@@ -23,7 +23,7 @@
         myForm.summary().psuedo_name + myForm.summary().wallet_address
       );
       const placeholder =
-        "https://twitter.com/intent/tweet?text=something%20that%27s%20going%20on%20sig%3A%20";
+        "https://twitter.com/intent/tweet?text=I%20am%20an%20early%20settler%20of%20Canto%20%40CantoPublic.%20Verification%3A%20";
       window.open(placeholder + hashedValue + "&hashtags=canto", "_blank");
     }
   }
@@ -70,11 +70,12 @@
   let loading = false;
   let success = false;
   let status = "Send Form";
+  let isNotMatch = false;
   async function saving() {
     try {
       await myForm.validate();
       const verified = await validateHash();
-      status = "Invalid Date"
+      isNotMatch = !verified;
       if (myForm.summary().psuedo_name && myForm.summary().wallet_address && verified) {
     loading = true;
 
@@ -105,6 +106,7 @@
       }
     } catch (error) {
       loading = false;
+      isNotMatch = true;
     }
   }
 </script>
@@ -116,7 +118,7 @@
       height={40}
       alt="canto logo"
       style="margin-right : 1rem"
-    />the game of canto
+    />the settlers of canto
   </h1>
   <p>
     Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum aliquid modi
@@ -126,13 +128,17 @@
   <section class="form">
     <div class="errors">
       {#if $myForm.hasError("psuedo_name.required")}
-        <p>we requrie a psuedo name.</p>
+        <p>Please enter a psuedo name.</p>
       {/if}
       {#if $myForm.hasError("wallet_address.required")}
-        <p>we need a valid walletAddress.</p>
+        <p>Please enter a walletAddress.</p>
       {/if}
       {#if $myForm.hasError("verifcation_url.required")}
-        <p>please enter the tweet url for verification</p>
+        <p>Please enter the tweet url for verification</p>
+      {/if}
+      {#if isNotMatch}
+      <p>Please enter a valid verification url.</p>
+
       {/if}
     </div>
     <div class="field">
@@ -165,9 +171,9 @@
       class="twitter-share-button"
       data-size="large"
     >
-      Tweet</button
+      Generate verification tweet</button
     >
-    <div class="field">
+    <div class="field" style="margin-top: 2rem;">
       <label for="validate">{$validate.name}</label>
       <input
         type="text"
@@ -180,7 +186,7 @@
       />
     </div>
     <button disabled={!$myForm.valid} on:click={saving}
-      >{loading ? "Sending Form" : success ? "Sent Successfully" : "Send Form"}</button
+      >{loading ? "Sending Form" : success ? "Sent Successfully" : "Submit"}</button
     >
   </section>
 </main>
