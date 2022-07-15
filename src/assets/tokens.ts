@@ -222,14 +222,14 @@ export const decimals = {
         method: "wallet_addEthereumChain",
         params: [
           {
-            chainId: "0x1E41",
+            chainId: "0x1E35",
             chainName: "Canto Testnet",
             nativeCurrency: {
               name: "Canto Coin",
               symbol: "CANTO",
               decimals: 18,
             },
-            rpcUrls: ["http://167.172.246.241:8545"],
+            rpcUrls: ["http://165.227.101.131:8545"],
             blockExplorerUrls: ["https://bscscan.com"],
           },
         ],
