@@ -131,14 +131,13 @@
         <p>Please enter a psuedo name.</p>
       {/if}
       {#if $myForm.hasError("wallet_address.required")}
-        <p>Please enter a walletAddress.</p>
+        <p>Please enter a wallet address.</p>
       {/if}
       {#if $myForm.hasError("verifcation_url.required")}
         <p>Please enter the tweet url for verification</p>
       {/if}
       {#if isNotMatch}
       <p>Please enter a valid verification url.</p>
-
       {/if}
     </div>
     <div class="field">
