@@ -25,7 +25,7 @@
       );
       const placeholder =
         "https://twitter.com/intent/tweet?text=I%20am%20an%20early%20settler%20of%20Canto%20%40CantoPublic.%20Verification%3A%20";
-      window.open(placeholder + hashedValue + "&hashtags=canto", "_blank");
+      window.open(placeholder + hashedValue, "_blank");
     }
   }
 
