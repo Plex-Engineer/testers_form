@@ -229,7 +229,7 @@ export const decimals = {
               symbol: "CANTO",
               decimals: 18,
             },
-            rpcUrls: ['https://165.227.101.131:8545/'],
+            rpcUrls: ['https://node.plexnode.wtf'],
             // blockExplorerUrls: ["https://bscscan.com"],
           },
         ],
