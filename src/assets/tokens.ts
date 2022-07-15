@@ -229,8 +229,8 @@ export const decimals = {
               symbol: "CANTO",
               decimals: 18,
             },
-            rpcUrls: ["http://165.227.101.131:8545"],
-            blockExplorerUrls: ["https://bscscan.com"],
+            rpcUrls: ['https://165.227.101.131:8545/'],
+            // blockExplorerUrls: ["https://bscscan.com"],
           },
         ],
       })

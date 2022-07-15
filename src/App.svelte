@@ -121,7 +121,7 @@
   />
   <h1 style="margin-bottom : 2rem">Settlers of Canto</h1>
   <p style="text-align: left;">
-    Settlers of Canto is a dress rehearsal for the official Canto launch. In
+    Settlers of Canto is a dress rehearsal for the Canto launch. In
     this walkthrough, you will have the chance to use Canto’s Free Public
     Infrastructure, including the Canto Dex LP and Canto Lending Market, for the very first time.<br
     /><br />
@@ -133,17 +133,17 @@
     </span>
   </p>
   <ul style="text-align: left">
-    <li style="margin: 10px 15px;">
+    <li style="margin: 10px 30px;">
       Fill out the form below to register and claim your testnet tokens 
     </li>
-    <li style="margin: 10px 15px;">
+    <li style="margin: 10px 30px;">
       Follow <a href="https://twitter.com/CantoPublic" style="color: white">@CantoPublic</a> on Twitter 
     </li>
-    <li style="margin: 10px 15px;">Join Telegram group</li>
-    <li style="margin: 10px 15px;">Provide liquidity to the Canto DEX</li>
-    <li style="margin: 10px 15px;">Supply LP tokens in the Canto Lending Market</li>
-    <li style="margin: 10px 15px;">
-      Report bugs and design changes to help us improve the overall experience for all Canto users
+    <li style="margin: 10px 30px;">Join <a href="https://t.me/settlersofcanto" style="color: white">Telegram</a> group</li>
+    <li style="margin: 10px 30px;">Provide liquidity to the Canto DEX</li>
+    <li style="margin: 10px 30px;">Supply LP tokens in the Canto Lending Market</li>
+    <li style="margin: 10px 30px;">
+      Report bugs and design changes in Telegram to help us improve the overall experience for all Canto users
     </li>
   </ul>
 
