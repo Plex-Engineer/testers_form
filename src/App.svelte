@@ -133,17 +133,17 @@
     </span>
   </p>
   <ul style="text-align: left">
-    <li style="margin: 10px 0;">
+    <li style="margin: 10px 15px;">
       Fill out the form below to register and claim your testnet tokens 
     </li>
-    <li style="margin: 10px 0;">
-      Follow <a href="https://twitter.com/CantoPublic" style="color: white">@CantoPublic</a> on Twitter to receive updates on Canto
+    <li style="margin: 10px 15px;">
+      Follow <a href="https://twitter.com/CantoPublic" style="color: white">@CantoPublic</a> on Twitter 
     </li>
-    <li style="margin: 10px 0;">Join Telegram group</li>
-    <li style="margin: 10px 0;">LP in DEX</li>
-    <li style="margin: 10px 0;">LP in Lending Market</li>
-    <li style="margin: 10px 0;">
-      Report bugs to help us improve the overall experience for all Canto users
+    <li style="margin: 10px 15px;">Join Telegram group</li>
+    <li style="margin: 10px 15px;">Provide liquidity to the Canto DEX</li>
+    <li style="margin: 10px 15px;">Supply LP tokens in the Canto Lending Market</li>
+    <li style="margin: 10px 15px;">
+      Report bugs and design changes to help us improve the overall experience for all Canto users
     </li>
   </ul>
 
