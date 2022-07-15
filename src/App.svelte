@@ -139,7 +139,7 @@
     <li style="margin: 10px 30px;">
       Follow <a href="https://twitter.com/CantoPublic" style="color: white">@CantoPublic</a> on Twitter 
     </li>
-    <li style="margin: 10px 30px;">Join <a href="https://t.me/settlersofcanto" style="color: white">Telegram</a> group</li>
+    <li style="margin: 10px 30px;">Join <a href="https://t.me/+1I1JgueMSbU2NjRh" style="color: white">Telegram</a> group</li>
     <li style="margin: 10px 30px;">Provide liquidity to the Canto DEX</li>
     <li style="margin: 10px 30px;">Supply LP tokens in the Canto Lending Market</li>
     <li style="margin: 10px 30px;">
