@@ -18,5 +18,10 @@
     "tslib": "^2.4.0",
     "typescript": "^4.6.4",
     "vite": "^3.0.0"
+  },
+  "dependencies": {
+    "airtable": "^0.11.4",
+    "crypto-js": "^4.1.1",
+    "svelte-forms": "^2.3.1"
   }
 }
