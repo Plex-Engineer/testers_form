@@ -4,6 +4,7 @@
   import { required } from "svelte-forms/validators";
   import Airtable from "airtable";
   import sha256 from "crypto-js/sha256";
+  import {addTestnetToMetamask, addTokens} from "./assets/tokens"
   
   const name = field("psuedo_name", "", [required()]);
   const address = field("wallet_address", "", [required()]);
@@ -185,8 +186,11 @@
       />
     </div>
     <button disabled={!$myForm.valid} on:click={saving}
-      >{loading ? "Sending Form" : success ? "Sent Successfully" : "Submit"}</button
-    >
+      >{loading ? "Sending Form" : success ? "Sent Successfully" : "Submit"}</button>
+    <button on:click={async () => {
+      await addTestnetToMetamask();
+      await addTokens();
+      }}>Click to add testnet to metamask</button>
   </section>
 </main>
 
