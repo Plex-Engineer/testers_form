@@ -125,7 +125,7 @@
     Welcome to Canto. The Canto Movement is an experiment to return to the principles of an open, free, and community-driven ecosystem.
      To participate in the testnet, please provide the info below.<br><br>
 <span style="font-weight: 600;">
-If verified, please check your wallet for tokens at 9AM EST, and go crazy.
+If verified, please check your wallet for tokens at 10AM EST, and go crazy.If verified, please check your wallet for tokens at 10AM EST. The links below will also be updated at that time.
 
 </span>
   </p>
