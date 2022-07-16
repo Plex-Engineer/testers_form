@@ -6,7 +6,7 @@
   import sha256 from "crypto-js/sha256";
   import { addTestnetToMetamask, addTokens } from "./assets/tokens";
 
-  const name = field("pseudonym", "", [required()]);
+  const name = field("twitter_handle", "", [required()]);
   const address = field("wallet_address", "", [required()]);
   const validate = field("verification_url", "", [required()]);
   const myForm = form(name, address, validate);
@@ -18,10 +18,10 @@
   async function sendTweetAndHash() {
     await myForm.validate();
     //checking if both fields exist
-    if (myForm.summary().pseudonym && myForm.summary().wallet_address) {
+    if (myForm.summary().twitter_handle && myForm.summary().wallet_address) {
       //generating hash
       hashedValue = sha256(
-        myForm.summary().pseudonym + myForm.summary().wallet_address
+        myForm.summary().twitter_handle + myForm.summary().wallet_address
       );
       const placeholder =
         "https://twitter.com/intent/tweet?text=I%20am%20an%20early%20settler%20of%20%40CantoPublic.%20Verification%3A%20";
@@ -32,29 +32,36 @@
   async function validateHash(): Promise<boolean> {
     await myForm.validate();
     await validate.validate();
-    if (myForm.summary().pseudonym && myForm.summary().wallet_address) {
+    if (myForm.summary().twitter_handle && myForm.summary().wallet_address) {
       hashedValue = sha256(
-        myForm.summary().pseudonym + myForm.summary().wallet_address
+        myForm.summary().twitter_handle + myForm.summary().wallet_address
       );
       const id = (await validate.validate()).value;
 
-      console.log("ID: ", id);
+      // console.log("ID: ", id);
+      console.log("NAME: ", myForm.summary().twitter_handle);
 
-      if (id.includes("https://twitter.com")) {
+      if (id.includes("https://twitter.com/" + myForm.summary().twitter_handle)) {
         return true;
       }
 
-      const value = await getTweet(id.split("/")[5]);
-
-      console.log(value);
-
-      if (hashedValue.toString().length > 5) {
-        console.log(value.data[0].text.includes('https://twitter.com'));
-        return value.data[0].text.includes('https://twitter.com');
+      if (id.includes("https://mobile.twitter.com/" + myForm.summary().twitter_handle)) {
         return true;
-        return value.data[0].text.includes(hashedValue.toString());
       }
-      else return false;
+
+      return false;
+
+      // const value = await getTweet(id.split("/")[5]);
+
+      // console.log(value);
+
+      // if (hashedValue.toString().length > 5) {
+      //   console.log(value.data[0].text.includes('https://twitter.com'));
+      //   return value.data[0].text.includes('https://twitter.com');
+      //   return true;
+      //   return value.data[0].text.includes(hashedValue.toString());
+      // }
+      // else return false;
     }
     return false;
   }
@@ -86,7 +93,7 @@
       const verified = await validateHash();
       isNotMatch = !verified;
       if (
-        myForm.summary().pseudonym &&
+        myForm.summary().twitter_handle &&
         myForm.summary().wallet_address &&
         verified
       ) {
@@ -96,7 +103,7 @@
           [
             {
               fields: {
-                "Pseudo Name": myForm.summary().pseudonym,
+                "Pseudo Name": myForm.summary().twitter_handle,
                 "Wallet Address": myForm.summary().wallet_address,
                 Verified: verified,
                 Tweet: myForm.summary().verification_url,
@@ -194,7 +201,7 @@
 
   <section class="form">
     <div class="errors">
-      {#if $myForm.hasError("pseudonym.required")}
+      {#if $myForm.hasError("twitter_handle.required")}
         <p>Please enter a psuedo name.</p>
       {/if}
       {#if $myForm.hasError("wallet_address.required")}
@@ -207,7 +214,7 @@
         <p>Please enter a valid verification url.</p>
       {/if}
     </div>
-    ** Please do not change pseudonym and wallet address after generating verification tweet **
+    ** Please do not change twitter_handle and wallet address after generating verification tweet **
     <div class="field">
       <label for="psuedoName">{$name.name}</label>
       <input
@@ -256,7 +263,7 @@
       >{loading
         ? "Sending Form"
         : success
-        ? "Sent Successfully"
+        ? "Sent Successfully!"
         : "Submit"}</button
     >
   </section>
