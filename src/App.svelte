@@ -220,7 +220,7 @@
   <section class="form">
     <div class="errors">
       {#if $myForm.hasError("twitter_handle.required")}
-        <p>Please enter a psuedo name.</p>
+        <p>Please enter a twitter handle.</p>
       {/if}
       {#if $myForm.hasError("wallet_address.required")}
         <p>Please enter a wallet address.</p>
