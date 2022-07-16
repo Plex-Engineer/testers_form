@@ -193,16 +193,16 @@
 
   <p style="text-align: left;">
     <br />
-    Testnet RPC url:
+    Testnet RPC url: https://node.plexnode.wtf
     <br />
 
-    Chain ID:
+    Chain ID: 7733
     <br />
 
-    Canto Lending Market url:
+    Canto Lending Market url: <a href="https://settlers-lending.canto.io/" style="color: white">https://settlers-lending.canto.io/</a>
     <br />
 
-    DEX url:
+    DEX url: <a href="https://settlers-dex.canto.io/" style="color: white">https://settlers-dex.canto.io/</a>
     <br />
     <br />
   </p>
