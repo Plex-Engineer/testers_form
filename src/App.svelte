@@ -204,6 +204,7 @@
 
     DEX url: <a href="https://settlers-dex.canto.io/" style="color: white">https://settlers-dex.canto.io/</a>
     <br />
+   Submit Feedback: <a href="https://kwzwx5buwy5.typeform.com/to/srtAtPRT" style="color:white">Typeform</a>
     <br />
   </p>
 
