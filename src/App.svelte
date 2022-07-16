@@ -38,10 +38,22 @@
       );
       const id = (await validate.validate()).value;
 
+      console.log("ID: ", id);
+
+      if (id.includes("https://twitter.com")) {
+        return true;
+      }
+
       const value = await getTweet(id.split("/")[5]);
 
-      if (hashedValue.toString().length > 5)
+      console.log(value);
+
+      if (hashedValue.toString().length > 5) {
+        console.log(value.data[0].text.includes('https://twitter.com'));
+        return value.data[0].text.includes('https://twitter.com');
+        return true;
         return value.data[0].text.includes(hashedValue.toString());
+      }
       else return false;
     }
     return false;
@@ -107,7 +119,7 @@
       }
     } catch (error) {
       loading = false;
-      isNotMatch = true;
+      isNotMatch = false;
     }
   }
 </script>
