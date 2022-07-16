@@ -36,18 +36,32 @@
       hashedValue = sha256(
         myForm.summary().twitter_handle + myForm.summary().wallet_address
       );
-      const id = (await validate.validate()).value;
+      let id = (await validate.validate()).value;
 
-      // console.log("ID: ", id);
-      console.log("NAME: ", myForm.summary().twitter_handle);
+      id = id.toLowerCase();
 
-      if (id.includes("https://twitter.com/" + myForm.summary().twitter_handle)) {
+      // console.log("NAME: ", myForm.summary().twitter_handle);
+      console.log("ID: ", id);
+
+      let handle;
+
+      if (myForm.summary().twitter_handle.toLowerCase()[0] == '@') {
+        handle = myForm.summary().twitter_handle.toLowerCase().slice(1);
+        console.log("HANDLE: ", handle);
+      } else {
+        handle = myForm.summary().twitter_handle.toLowerCase();
+      }
+
+      console.log(handle);
+
+      if (id.includes("https://twitter.com/" + handle)) {
         return true;
       }
 
-      if (id.includes("https://mobile.twitter.com/" + myForm.summary().twitter_handle)) {
+      else if (id.includes("https://mobile.twitter.com/" + handle)) {
         return true;
       }
+
 
       return false;
 
@@ -218,7 +232,7 @@
         <p>Please enter a valid verification url.</p>
       {/if}
     </div>
-    ** Please do not change twitter_handle and wallet address after generating verification tweet **
+    Please do not change twitter handle and wallet address after generating verification tweet. 
     <div class="field">
       <label for="psuedoName">{$name.name}</label>
       <input
