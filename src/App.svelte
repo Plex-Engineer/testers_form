@@ -142,8 +142,12 @@
   <p style="text-align: left;">
     Settlers of Canto is a dress rehearsal for the Canto launch. In
     this walkthrough, you will have the chance to use Canto’s Free Public
-    Infrastructure, including the Canto Dex LP and Canto Lending Market, for the very first time.<br
+    Infrastructure, including the Canto Dex LP and Canto Lending Market, for the very first time. Settling
+    starts on July 16 at 11AM CST.<br
     /><br />
+    <p style="text-align: left;">
+      Read more about Canto's full launch schedule <a style="color: white" href="https://mirror.xyz/0x4CeD9817cAD891aEFfbF5Fb7DcB6f3c6aEBd4228/kSrSQcHROw41HlS0M3YU_Yj1ljRarGXChrKbE0Z7BJc">here</a><br
+      /><br />
 
     <br />
     <br />
