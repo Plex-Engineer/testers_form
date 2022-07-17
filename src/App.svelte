@@ -159,12 +159,11 @@
     Infrastructure, including the Canto Dex LP and Canto Lending Market, for the very first time. Settling
     starts on July 16 at 11AM CST.<br
     /><br />
+    <h3 style="margin-bottom: 2rem;">The Settlers of Canto event has now ended as of July 17th at 6pm CST. Please use this form to request testnet tokens if you would like to use the testnet.</h3>
     <p style="text-align: left;">
       Read more about Canto's full launch schedule <a style="color: white" href="https://mirror.xyz/0x4CeD9817cAD891aEFfbF5Fb7DcB6f3c6aEBd4228/kSrSQcHROw41HlS0M3YU_Yj1ljRarGXChrKbE0Z7BJc">here</a><br
       /><br />
 
-    <br />
-    <br />
     <span style="font-weight: 600;">
       The goals of Settlers are as follows:
     </span>
@@ -208,7 +207,7 @@
     <br />
   </p>
 
-  <button
+  <button style="margin-top: 2rem;"
     on:click={async () => {
       await addTestnetToMetamask();
       // await addTokens();
